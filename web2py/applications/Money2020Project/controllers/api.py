@@ -4,8 +4,8 @@ def performTransaction():
         return 'Hello World from performTransaction GET'
     def POST(*args,**vars):
         import simplify
-		simplify.public_key = "YOUR_PUBLIC_API_KEY"
-		simplify.private_key = "YOUR_PRIVATE_API_KEY"
+		simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
+		simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
 		payment = simplify.Payment.create({
        "card" : {
             "number": "5555555555554444",
