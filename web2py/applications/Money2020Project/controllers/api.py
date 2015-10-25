@@ -32,13 +32,10 @@ def testEndpoint():
         cardCvc = "123"#request.post_vars['cardCvc']
 
 		#Sum the price of all the items
-        sum = 22.19
-        items = itemsJson['items']
-        print 'items[0]: '
-        print items[0] #example get of a particular index
-        firstItemPrice = float(items[0]['price']) # this will convert the first items price into a decimal
-        print 'firstItemPrice: '
-        print firstItemPrice
+        sum = 0.00
+        for item in itemsJson['items']:
+            sum = sum + float(item['price'])
+        print 'Sum of items: ' + str(sum)
         
         '''
 		#Charge the user's card. We will receive this payment.
