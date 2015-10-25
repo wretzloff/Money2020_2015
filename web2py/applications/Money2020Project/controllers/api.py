@@ -41,6 +41,7 @@ def processTransaction():
             sumItemPrices = sumItemPrices + float(item['price'])
         sumItemPrices = sumItemPrices*100
         print 'sumItemPrices of items: ' + str(sumItemPrices)
+        #db.Transactions.insert(merchantID='1', customerID='1', amount='12.95', transactionDate='20150821')
         
 		#Charge the user's card. We will receive this payment.
         payment = simplify.Payment.create({
