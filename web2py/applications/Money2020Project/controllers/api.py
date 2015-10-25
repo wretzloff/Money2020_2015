@@ -71,7 +71,14 @@ def testEndpoint():
 @request.restful()
 def getItemInfo():
     def GET(itemID):
-        return itemID
+        print itemID
+        itemName = None
+        itemPrice = None
+        if itemID == '038000635502':
+            itemName = 'Kellogs Special K Original Toasted Rice Cereal'
+            itemPrice = '1.23'
+        returnString = "{\"itemID\":" + itemID + ",\"itemName\":" + itemName + ",\"itemPrice\":" + itemPrice + "}"
+        return returnString
     def POST(*args,**vars):
         return 'Hello World from testEndpoint POST'
     def PUT(*args,**vars):
