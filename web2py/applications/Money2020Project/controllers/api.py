@@ -2,9 +2,9 @@ import json
 import simplify
 
 @request.restful()
-def testEndpoint():
+def processTransaction():
     def GET():
-        return ''
+        return 'process GET'
     def POST(*args,**vars):
         simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
         simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
@@ -76,11 +76,24 @@ def getItemInfo():
         itemPrice = None
         if itemID == '038000635502':
             itemName = 'Kellogs Special K Original Toasted Rice Cereal'
-            itemPrice = '1.23'
+            itemPrice = '3.25'
+        elif itemID == '03400704':
+            itemName = 'Ice Breakers Mints'
+            itemPrice = '2.35'
+        elif itemID == '03400704':
+            itemName = 'KIND Fruit & Nut Delight'
+            itemPrice = '1.25'
+        elif itemID == '04913207':
+            itemName = 'Sprite'
+            itemPrice = '0.99'
+        elif itemID == '04963406':
+            itemName = 'Coca-Cola'
+            itemPrice = '0.99'
+
         returnString = "{\"itemID\":\"" + itemID + "\",\"itemName\":\"" + itemName + "\",\"itemPrice\":\"" + itemPrice + "\"}"
         return returnString
     def POST(*args,**vars):
-        return 'Hello World from testEndpoint POST'
+        return 'Hello World from getItemInfo POST'
     def PUT(*args,**vars):
         return ''
     def DELETE():
