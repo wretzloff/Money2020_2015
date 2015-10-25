@@ -14,14 +14,6 @@ def testEndpoint():
 		#Required parameter: 'items'
 		#Contains a JSON string representing an array of items that were purchased.
         itemsJson = json.loads('{"items": [{"name": "tomato","price": "2.93"},{"name": "tooth brush","price": "9.99"}]}')#request.post_vars['items']
-        
-        print "printing items below" # debugging
-        items = itemsJson['items']
-        print items # show all the items gotten
-        firstItemPrice = float(items[0]['price']) # this will convert the first items price into a decimal
-        print firstItemPrice
-        #print itemsJson['items'][0] #example get of a particular index
-        
 
 		#Required parameter: 'cardNumber'
         #
@@ -41,9 +33,12 @@ def testEndpoint():
 
 		#Sum the price of all the items
         sum = 22.19
-		#for
-		#{
-		#}
+        items = itemsJson['items']
+        print 'items[0]: '
+        print items[0] #example get of a particular index
+        firstItemPrice = float(items[0]['price']) # this will convert the first items price into a decimal
+        print 'firstItemPrice: '
+        print firstItemPrice
         
         '''
 		#Charge the user's card. We will receive this payment.
