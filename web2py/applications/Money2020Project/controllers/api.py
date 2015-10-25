@@ -6,38 +6,39 @@ def performTransaction():
         import simplify
 		simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
 		simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
-		
+
 		#Required parameter: 'merchantID'
         #Contains an ID that identifies who is being paid (Costco, Walmart, etc.)
         merchantID = 1#request.post_vars['merchantID']
-		
+
 		#Required parameter: 'items'
 		#Contains a JSON string representing an array of items that were purchased.
-		itemsString = "[{"itemName":"first item", "itemPrice":"12.00"}, {"itemName":"second item", "itemPrice":"1.93"}, {"itemName":"third item","itemPrice":"17.99"}]"#request.post_vars['items']
+		itemsString = "{"items": [{"name": "tomato","price": "2.93"},{"name": "onion","price": "3.87"},{"name": "tooth brush","price": "9.99"}]}"
+        #request.post_vars['items']
         itemsArray = httpFunctions.convertJsonToArray(itemsJson)
-		
+
 		#Required parameter: 'cardNumber'
         #
         cardNumber = "5555555555554444"#request.post_vars['cardNumber']
-		
+
 		#Required parameter: 'cardExpMonth'
         #
         cardExpMonth = 11#request.post_vars['cardExpMonth']
-		
+
 		#Required parameter: 'cardExpYear'
         #
         cardExpYear = 15#request.post_vars['cardExpYear']
-		
+
 		#Required parameter: 'cardCvc'
         #
         cardCvc = "123"#request.post_vars['cardCvc']
-		
+
 		#Sum the price of all the items
 		sum = 22.19
 		#for
 		#{
 		#}
-		
+
 		#Charge the user's card. We will receive this payment.
 		payment = simplify.Payment.create({
        "card" : {
@@ -52,13 +53,13 @@ def performTransaction():
 		})
 		if payment.paymentStatus == 'APPROVED':
 			print "Payment approved"
-		
+
 		#Send money to Merchant
-		#TODO 
-		
+		#TODO
+
 		#Save receipt to database
 		#TODO
-		
+
 		return 'Hello World from performTransaction POST'
 		def PUT(*args,**vars):
 			return ''
@@ -79,4 +80,3 @@ def testEndpoint():
     def DELETE():
         return ''
     return dict(GET=GET, POST=POST, PUT=PUT, DELETE=DELETE)
-
