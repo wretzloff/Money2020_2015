@@ -90,6 +90,24 @@ def getItemInfo():
             itemName = 'Coca-Cola'
             itemPrice = '0.99'
 
+        elif itemID == '602652170041':
+            itemName = 'Kind Fruit & Nut Delight'
+            itemPrice = '1.59'
+        elif itemID == '722252100900':
+            itemName = 'Clif Bar Chocolate Chip'
+            itemPrice = '2.79'
+        elif itemID == '04913207':
+            itemName = 'Sprite 12 oz'
+            itemPrice = '.99'
+        elif itemID == '04963406':
+            itemName = 'Coca Cola 12 oz'
+            itemPrice = '.99'
+        elif itemID == '03400704':
+            itemName = 'Ice Breakers Mints Coolmint'
+            itemPrice = '.89'
+        else:
+            itemName = 'unknown'
+            itemPrice = 'unknown'
         returnString = "{\"itemID\":\"" + itemID + "\",\"itemName\":\"" + itemName + "\",\"itemPrice\":\"" + itemPrice + "\"}"
         return returnString
     def POST(*args,**vars):
