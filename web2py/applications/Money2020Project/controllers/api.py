@@ -2,17 +2,18 @@
 def testEndpoint():
     def GET():
         import json
-    	import simplify
+    	'''
+        import simplify
         simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
         simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
-
+        '''
 		#Required parameter: 'merchantID'
         #Contains an ID that identifies who is being paid (Costco, Walmart, etc.)
         merchantID = 1#request.post_vars['merchantID']
 
 		#Required parameter: 'items'
 		#Contains a JSON string representing an array of items that were purchased.
-        itemsJson = json.loads('{"items": [{"name": "tomato","price": "2.93"},{"name": "tooth brush","price": "9.99"}]}')
+        itemsJson = json.loads('{"items": [{"name": "tomato","price": "2.93"},{"name": "tooth brush","price": "9.99"}]}')#request.post_vars['items']
         
         print "printing items below" # debugging
         items = itemsJson['items']
@@ -20,7 +21,7 @@ def testEndpoint():
         firstItemPrice = float(items[0]['price']) # this will convert the first items price into a decimal
         print firstItemPrice
         #print itemsJson['items'][0] #example get of a particular index
-        #request.post_vars['items']
+        
 
 		#Required parameter: 'cardNumber'
         #
