@@ -43,7 +43,8 @@ def testEndpoint():
 		#for
 		#{
 		#}
-
+        
+        '''
 		#Charge the user's card. We will receive this payment.
         payment = simplify.Payment.create({
 			"card" : {
@@ -58,13 +59,12 @@ def testEndpoint():
 		})
         if payment.paymentStatus == 'APPROVED':
 			print "Payment approved"
-
+        '''
 		#Send money to Merchant
 		#TODO
 
 		#Save receipt to database
 		#TODO
-        return 'Hello World from performTransaction GET'
         return 'Hello World from testEndpoint GET'
     def POST(*args,**vars):
         return 'Hello World from testEndpoint POST'
