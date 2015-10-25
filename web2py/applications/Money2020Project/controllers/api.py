@@ -1,12 +1,12 @@
 import json
-#import simplify
+import simplify
 
 @request.restful()
 def testEndpoint():
     def GET():
     	
-        #simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
-        #simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
+        simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
+        simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
         
 		#Required parameter: 'merchantID'
         #Contains an ID that identifies who is being paid (Costco, Walmart, etc.)
@@ -34,28 +34,29 @@ def testEndpoint():
         #cardCvc = request.post_vars['cardCvc']
         cardCvc = "123"
 
-		#Sum the price of all the items
-        sum = 0.00
+		#sumItemPrices the price of all the items
+        sumItemPrices = 0.00
         for item in itemsJson['items']:
-            sum = sum + float(item['price'])
-        print 'Sum of items: ' + str(sum)
+            sumItemPrices = sumItemPrices + float(item['price'])
+        sumItemPrices = sumItemPrices*100
+        print 'sumItemPrices of items: ' + str(sumItemPrices)
         
-        '''
 		#Charge the user's card. We will receive this payment.
         payment = simplify.Payment.create({
-			"card" : {
+        	"card" : {
             "number": cardNumber,
             "expMonth": cardExpMonth,
             "expYear": cardExpYear,
             "cvc": cardCvc
         },
-        	"amount" : sum,
-        	"description" : "Costco",
-        	"currency" : "USD"
-		})
+        "amount" : sumItemPrices,
+        "description" : "Costco",
+        "currency" : "USD"
+        })
+
         if payment.paymentStatus == 'APPROVED':
 			print "Payment approved"
-        '''
+        
 		#Send money to Merchant
 		#TODO
 		#Save receipt to database
