@@ -89,6 +89,12 @@ db.define_table('Transactions',
                 Field('amount','string'),
                 Field('transactionDate','string'),
                 migrate=False)
+db.define_table('Items',
+                Field('transactionID','string'),
+                Field('itemID','string'),
+                Field('itemPrice','string'),
+                Field('itemName','string'),
+                migrate=True)
 #########################################################################
 
 ## after defining tables, uncomment below to enable auditing
