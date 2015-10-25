@@ -1540,3 +1540,9 @@
 127.0.0.1, 2015-10-24 22:33:02, GET, /favicon.ico, HTTP/1.1, 400, 0.001000
 127.0.0.1, 2015-10-24 22:33:59, GET, /Money2020Project/api/testEndpoint, HTTP/1.1, 200, 1.188000
 127.0.0.1, 2015-10-24 22:33:59, GET, /favicon.ico, HTTP/1.1, 400, 0.001000
+127.0.0.1, 2015-10-24 23:25:32, GET, /Money2020Project/api/testEndpoint, HTTP/1.1, 200, 1.208000
+127.0.0.1, 2015-10-24 23:25:32, GET, /favicon.ico, HTTP/1.1, 400, 0.000000
+127.0.0.1, 2015-10-24 23:26:53, GET, /Money2020Project/api/testEndpoint, HTTP/1.1, 200, 0.021000
+127.0.0.1, 2015-10-24 23:26:53, GET, /favicon.ico, HTTP/1.1, 400, 0.000000
+127.0.0.1, 2015-10-24 23:28:27, POST, /Money2020Project/api/testEndpoint, HTTP/1.1, 200, 0.865000
+127.0.0.1, 2015-10-24 23:29:30, POST, /Money2020Project/api/testEndpoint, HTTP/1.1, 200, 1.276000

@@ -4,6 +4,8 @@ import simplify
 @request.restful()
 def testEndpoint():
     def GET():
+        return ''
+    def POST(*args,**vars):
         simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
         simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
         
@@ -54,14 +56,12 @@ def testEndpoint():
         })
                 
 		#TODO: Now that we've been paid, we need to pay that money forward to  the merchant.
-		#TODO: This transaction is complete. Save important info to database for ananalytics.
+		#TODO: This transaction is complete. Save important info to database for analytics.
         
         if payment.paymentStatus == 'APPROVED':
 			return 'Payment approved: ' + str(sumItemPrices)
         else:
             return 'Payment declined.'
-    def POST(*args,**vars):
-        return 'Hello World from testEndpoint POST'
     def PUT(*args,**vars):
         return ''
     def DELETE():
