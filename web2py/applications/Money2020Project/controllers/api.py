@@ -1,21 +1,18 @@
 @request.restful()
 def performTransaction():
     def GET():
-        return 'Hello World from performTransaction GET'
-    def POST(*args,**vars):
-        import simplify
-        simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
-        simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
+    	#import simplify
+        #simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
+        #simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
 
 		#Required parameter: 'merchantID'
         #Contains an ID that identifies who is being paid (Costco, Walmart, etc.)
-        #merchantID = 1#request.post_vars['merchantID']
+        merchantID = 1#request.post_vars['merchantID']
 
 		#Required parameter: 'items'
 		#Contains a JSON string representing an array of items that were purchased.
-        #itemsString = "{\"items\": [{\"name\": \"tomato\",\"price\": \"2.93\"},{\"name\": \"tooth brush\",\"price\": \"9.99\"}]}"
-        #print 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-        #print itemString
+        itemsString = "{\"items\": [{\"name\": \"tomato\",\"price\": \"2.93\"},{\"name\": \"tooth brush\",\"price\": \"9.99\"}]}"
+        print itemsString #debugging 
         #request.post_vars['items']
         #itemsArray = httpFunctions.convertJsonToArray(itemsJson)
 
@@ -36,24 +33,24 @@ def performTransaction():
         cardCvc = "123"#request.post_vars['cardCvc']
 
 		#Sum the price of all the items
-		sum = 22.19
+        sum = 22.19
 		#for
 		#{
 		#}
 
 		#Charge the user's card. We will receive this payment.
-		payment = simplify.Payment.create({
-       "card" : {
+        payment = simplify.Payment.create({
+			"card" : {
             "number": cardNumber,
             "expMonth": cardExpMonth,
             "expYear": cardExpYear,
             "cvc": cardCvc
         },
-        "amount" : sum,
-        "description" : "Costco",
-        "currency" : "USD"
+        	"amount" : sum,
+        	"description" : "Costco",
+        	"currency" : "USD"
 		})
-		if payment.paymentStatus == 'APPROVED':
+        if payment.paymentStatus == 'APPROVED':
 			print "Payment approved"
 
 		#Send money to Merchant
@@ -61,15 +58,14 @@ def performTransaction():
 
 		#Save receipt to database
 		#TODO
-        
+        return 'Hello World from performTransaction GET'
+    def POST(*args,**vars):
         return 'Hello World from performTransaction POST'
 	def PUT(*args,**vars):
 		return ''
 	def DELETE():
 		return ''
 	return dict(GET=GET, POST=POST, PUT=PUT, DELETE=DELETE)
-
-
 
 @request.restful()
 def testEndpoint():
