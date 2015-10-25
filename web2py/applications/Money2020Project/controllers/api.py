@@ -80,16 +80,6 @@ def getItemInfo():
         elif itemID == '03400704':
             itemName = 'Ice Breakers Mints'
             itemPrice = '2.35'
-        elif itemID == '03400704':
-            itemName = 'KIND Fruit & Nut Delight'
-            itemPrice = '1.25'
-        elif itemID == '04913207':
-            itemName = 'Sprite'
-            itemPrice = '0.99'
-        elif itemID == '04963406':
-            itemName = 'Coca-Cola'
-            itemPrice = '0.99'
-
         elif itemID == '602652170041':
             itemName = 'Kind Fruit & Nut Delight'
             itemPrice = '1.59'
