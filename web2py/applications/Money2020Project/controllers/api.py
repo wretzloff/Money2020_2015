@@ -67,3 +67,15 @@ def testEndpoint():
     def DELETE():
         return ''
     return dict(GET=GET, POST=POST, PUT=PUT, DELETE=DELETE)
+
+@request.restful()
+def getItemInfo():
+    def GET(itemID):
+        return itemID
+    def POST(*args,**vars):
+        return 'Hello World from testEndpoint POST'
+    def PUT(*args,**vars):
+        return ''
+    def DELETE():
+        return ''
+    return dict(GET=GET, POST=POST, PUT=PUT, DELETE=DELETE)
