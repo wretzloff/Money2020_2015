@@ -66,3 +66,12 @@ CREATE TABLE Customer(
     age CHAR(512)
 );
 success!
+timestamp: 2015-10-25T07:31:04.980000
+CREATE TABLE Transactions(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    merchantID CHAR(512),
+    customerID CHAR(512),
+    amount CHAR(512),
+    transactionDate CHAR(512)
+);
+success!

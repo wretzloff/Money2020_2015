@@ -83,6 +83,12 @@ use_janrain(auth, filename='private/janrain.key')
 ## >>> for row in rows: print row.id, row.myfield
 db.define_table('Merchants',Field('name','string'),migrate=False)
 db.define_table('Customer',Field('name','string'),Field('age','string'),migrate=False)
+db.define_table('Transactions',
+                Field('merchantID','string'),
+                Field('customerID','string'),
+                Field('amount','string'),
+                Field('transactionDate','string'),
+                migrate=False)
 #########################################################################
 
 ## after defining tables, uncomment below to enable auditing
