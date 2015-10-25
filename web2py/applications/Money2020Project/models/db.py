@@ -94,7 +94,7 @@ db.define_table('Items',
                 Field('itemID','string'),
                 Field('itemPrice','string'),
                 Field('itemName','string'),
-                migrate=True)
+                migrate=False)
 #########################################################################
 
 ## after defining tables, uncomment below to enable auditing
