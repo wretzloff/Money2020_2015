@@ -42,6 +42,7 @@ def processTransaction():
         sumItemPrices = sumItemPrices*100
         print 'sumItemPrices of items: ' + str(sumItemPrices)
         #db.Transactions.insert(merchantID='1', customerID='1', amount='12.95', transactionDate='20150821')
+        #db.Items.insert(transactionID='1', itemID='038000635502', itemPrice='12.03', itemName='Kellogs Special K Original Toasted Rice Cereal')
         
 		#Charge the user's card. We will receive this payment.
         payment = simplify.Payment.create({
