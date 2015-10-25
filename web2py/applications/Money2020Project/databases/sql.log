@@ -53,3 +53,16 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2015-10-25T02:50:13.293000
+CREATE TABLE Merchants(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512)
+);
+success!
+timestamp: 2015-10-25T02:53:55.860000
+CREATE TABLE Customer(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    age CHAR(512)
+);
+success!
