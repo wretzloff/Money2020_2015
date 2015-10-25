@@ -1,8 +1,8 @@
 @request.restful()
 def testEndpoint():
     def GET():
+        import json
     	import simplify
-    	import json
         simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
         simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
 
