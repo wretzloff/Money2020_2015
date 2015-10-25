@@ -58,7 +58,23 @@ def processTransaction():
         })
                 
 		#TODO: Now that we've been paid, we need to pay that money forward to  the merchant.
-		#TODO: This transaction is complete. Save important info to database for analytics.
+		#This transaction is complete. Save important info to database for analytics.
+        '''
+        sampleString = json.loads('{"0094884" : { "item" :{"name":"peanut butter","cost":1.97,"img":"http://urlurlurl/11"},"quantity":1,"totalCost":1.97},"0094885" : { "item" :{"name":"jelly","cost":1.98,"img":"http://urlurlurl/22"},"quantity":1,"totalCost":1.98}}')
+        sum = 0
+        for key, value in sampleString.items():
+            print 'key: ' + key
+            itemID = key
+            print 'value: ' + str(value)
+            priceForItem = value['totalCost']
+            print 'price: ' + str(priceForItem)
+            name = value['item']['name']
+            print 'name: ' + name
+            sum = sum + priceForItem
+            #Save to database
+            db.Transactions.insert(merchantID='1', customerID='1', amount=sum, transactionDate='20151025')
+            db.Items.insert(transactionID='1', itemID=itemID, itemPrice=priceForItem, itemName=name)
+        '''
         
         if payment.paymentStatus == 'APPROVED':
 			return 'Payment approved: ' + str(sumItemPrices)
