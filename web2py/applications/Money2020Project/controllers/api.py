@@ -12,12 +12,9 @@ def testEndpoint():
 
 		#Required parameter: 'items'
 		#Contains a JSON string representing an array of items that were purchased.
-        itemsString = json.loads("{\"items\": [{\"name\": \"tomato\",\"price\": \"2.93\"},{\"name\": \"tooth brush\",\"price\": \"9.99\"}]}")
-        print itemsString #debugging 
-        print "this is some thing blah \n"
-        print itemsString[0]
+        itemsJson = json.loads('{"items": [{"name": "tomato","price": "2.93"},{"name": "tooth brush","price": "9.99"}]}')
+        #print itemsJson['items'][0] #example get of a particular index
         #request.post_vars['items']
-        #itemsArray = httpFunctions.convertJsonToArray(itemsJson)
 
 		#Required parameter: 'cardNumber'
         #
