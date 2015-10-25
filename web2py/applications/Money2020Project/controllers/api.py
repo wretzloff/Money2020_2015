@@ -4,33 +4,35 @@ import json
 @request.restful()
 def testEndpoint():
     def GET():
-    	'''
-        simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
-        simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
-        '''
+    	
+        #simplify.public_key = "sbpb_MzZiNTQ2MTAtMGY2ZS00NGI4LWEzNzEtYjQyMTU4NzhiM2Vj"
+        #simplify.private_key = "WuHzM3OXNN5eO1kWM8dRJtYNzgfbF6dtA+w8FElar/N5YFFQL0ODSXAOkNtXTToq"
+        
 		#Required parameter: 'merchantID'
         #Contains an ID that identifies who is being paid (Costco, Walmart, etc.)
-        merchantID = 1#request.post_vars['merchantID']
+        #merchantID = request.post_vars['merchantID']
+        merchantID = 1
 
 		#Required parameter: 'items'
 		#Contains a JSON string representing an array of items that were purchased.
-        itemsJson = json.loads('{"items": [{"name": "tomato","price": "2.93"},{"name": "tooth brush","price": "9.99"}]}')#request.post_vars['items']
+        #itemsJson = request.post_vars['items']
+        itemsJson = json.loads('{"items": [{"name": "tomato","price": "2.93"},{"name": "tooth brush","price": "9.99"}]}')
 
 		#Required parameter: 'cardNumber'
-        #
-        cardNumber = "5555555555554444"#request.post_vars['cardNumber']
+        #cardNumber = request.post_vars['cardNumber']
+        cardNumber = "5555555555554444"
 
 		#Required parameter: 'cardExpMonth'
-        #
-        cardExpMonth = 11#request.post_vars['cardExpMonth']
+        #cardExpMonth = request.post_vars['cardExpMonth']
+        cardExpMonth = 11
 
 		#Required parameter: 'cardExpYear'
-        #
-        cardExpYear = 15#request.post_vars['cardExpYear']
+        #cardExpYear = request.post_vars['cardExpYear']
+        cardExpYear = 15
 
 		#Required parameter: 'cardCvc'
-        #
-        cardCvc = "123"#request.post_vars['cardCvc']
+        #cardCvc = request.post_vars['cardCvc']
+        cardCvc = "123"
 
 		#Sum the price of all the items
         sum = 0.00
@@ -56,7 +58,6 @@ def testEndpoint():
         '''
 		#Send money to Merchant
 		#TODO
-
 		#Save receipt to database
 		#TODO
         return 'Hello World from testEndpoint GET'
